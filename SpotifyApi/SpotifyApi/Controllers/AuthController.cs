@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SpotifyApi.Services;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
@@ -10,10 +11,12 @@ namespace SpotifyApi.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly ITokenService _tokenService;
 
-        public AuthController(IHttpClientFactory httpClientFactory)
+        public AuthController(IHttpClientFactory httpClientFactory, ITokenService tokenService)
         {
             _httpClientFactory = httpClientFactory;
+            _tokenService = tokenService;
         }
 
         [HttpGet()]
@@ -41,6 +44,8 @@ namespace SpotifyApi.Controllers
             var responseContent = await response.Content.ReadAsStringAsync();
             var tokenInfo = JsonSerializer.Deserialize<JsonElement>(responseContent);
             var accessToken = tokenInfo.GetProperty("access_token").GetString();
+
+            _tokenService.SetAccessToken(accessToken);
 
             return Ok(new { AccessToken = accessToken });
         }
