@@ -1,4 +1,5 @@
 using Refit;
+using SpotifyApi.Data;
 using SpotifyApi.Handles;
 using SpotifyApi.Services;
 using System.Text.Json;
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<ITokenService, TokenService>();
+builder.Services.AddSingleton<IArtistSimpleRepository, ArtistSimpleRepository>();
 builder.Services.AddTransient<AuthTokenHandler>();
 
 var refitSettings = new RefitSettings
