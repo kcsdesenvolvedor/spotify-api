@@ -35,6 +35,17 @@ namespace SpotifyApi.Data
             }
         }
 
+        public async Task<IEnumerable<ArtistSimpleModel>> GetArtistsByPopularity(int minPopularity, int maxPopularity)
+        {
+            var sql = "SELECT * FROM Artists WHERE Popularity BETWEEN @MinPopularity AND @MaxPopularity";
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var artists = await connection.QueryAsync<ArtistSimpleModel>(sql, new { MinPopularity = minPopularity, MaxPopularity = maxPopularity });
+                return artists;
+            }
+        }
+
         public async void InsertArtistSimple(ArtistSimpleModel artist)
         {
             var sql = "INSERT INTO Artists (Id, Name, Popularity) VALUES (@Id, @Name, @Popularity)";

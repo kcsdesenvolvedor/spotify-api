@@ -17,14 +17,7 @@ namespace SpotifyApi.Controllers
             _artitService = artitService;
         }
 
-        [HttpGet]
-        public async Task<ActionResult> GetAllArtists()
-        {
-            var artists = await _artitService.GetAllArtistsAsync();
-            return Ok(artists);
-        }
-
-        [HttpGet("{id}")]
+        [HttpGet("GetArtistBySpotifyAPI")]
         public async Task<IActionResult> GetArtist(string id)
         {
             var artist = await _spotifyApi.GetArtistAsync(id);
@@ -35,6 +28,21 @@ namespace SpotifyApi.Controllers
 
             _artitService.InsertArtistSimple(artistSimple);
             return Ok(artistSimple);
+        }
+
+        [HttpGet("GetAllArtists")]
+        public async Task<ActionResult> GetAllArtists()
+        {
+            var artists = await _artitService.GetAllArtistsAsync();
+            return Ok(artists);
+        }
+
+
+        [HttpGet("GetArtistsByPopularity")]
+        public async Task<IActionResult> GetArtistsByPopularity(int minPopularity, int maxPopularity)
+        {
+            var artists = await _artitService.GetArtistsByPopularity(minPopularity, maxPopularity);
+            return Ok(artists);
         }
     }
 }
