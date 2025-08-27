@@ -26,7 +26,7 @@ namespace SpotifyApi.Controllers
 
             var artistSimple = JsonSerializer.Deserialize<Models.ArtistSimpleModel>(artist);
 
-            _artitService.InsertArtistSimple(artistSimple);
+            await _artitService.InsertArtistSimple(artistSimple);
             return Ok(artistSimple);
         }
 

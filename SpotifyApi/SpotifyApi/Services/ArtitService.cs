@@ -27,7 +27,7 @@ namespace SpotifyApi.Services
             return _artistSimpleRepository.GetArtistsByPopularity(minPopularity, maxPopularity);
         }
 
-        public async void InsertArtistSimple(ArtistSimpleModel artist)
+        public async Task InsertArtistSimple(ArtistSimpleModel artist)
         {
             var artistExists = await _artistSimpleRepository.GetArtistByIdAsync(artist.Id);
 
