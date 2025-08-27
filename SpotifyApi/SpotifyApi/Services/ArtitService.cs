@@ -22,9 +22,12 @@ namespace SpotifyApi.Services
             return await _artistSimpleRepository.GetArtistByIdAsync(id);
         }
 
-        public void InsertArtistSimple(ArtistSimpleModel artist)
+        public async void InsertArtistSimple(ArtistSimpleModel artist)
         {
-            _artistSimpleRepository.InsertArtistSimple(artist);
+            var artistExists = await _artistSimpleRepository.GetArtistByIdAsync(artist.Id);
+
+            if (artistExists == null)
+                _artistSimpleRepository.InsertArtistSimple(artist);
         }
     }
 }
