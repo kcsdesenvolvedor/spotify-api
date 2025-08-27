@@ -17,6 +17,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ITokenService, TokenService>();
 builder.Services.AddSingleton<IArtistSimpleRepository, ArtistSimpleRepository>();
 builder.Services.AddTransient<AuthTokenHandler>();
+builder.Services.AddTransient<IArtitService, ArtitService>();
 
 var refitSettings = new RefitSettings
 {
