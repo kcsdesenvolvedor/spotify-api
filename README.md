@@ -52,7 +52,15 @@ $ git clone https://github.com/kcsdesenvolvedor/spotify-api.git
 	    Popularity int
     );
   ```
-  - Configure a string de conexão no appsettings.json
+  - Configure a string de conexão usando User Secrets
+    - Inicie o User Secrets: Abra o terminal na raiz do projeto e execute:
+      ```bash
+     	dotnet user-secrets init
+      ```
+    - Adicione a connection string: Insira suas próprias credenciais com os seguintes comandos.
+      ```bash
+     	dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=localhost;Database=SeuBancoDeDados;User Id=SeuUsuario;Password=SuaSenha;TrustServerCertificate=True"
+      ```
     
 * Criação das chaves para conexão com a API do Spotify
   - Para realizarmos requisições para API do Spotify precisamos de duas chaves, ClientID e ClientSecret.
