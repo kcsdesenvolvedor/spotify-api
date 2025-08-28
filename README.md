@@ -19,6 +19,7 @@
 <p align="center">
   <a href="#funcionalidades">Funcionalidades</a> •
   <a href="#como-usar">Como usar</a> •
+  <a href="#créditos">Créditos</a> •
   <a href="#licença">Licença</a>
 </p>
 
@@ -63,6 +64,9 @@ $ git clone https://github.com/kcsdesenvolvedor/spotify-api.git
   - Ao execultar nossa API vamos encontrar uma controller Auth contendo um endpoint, insira as chaves ClientID e ClientSecret nos respectivos inputs e execulte para autorizar nossa API enviar requisições para API do Spotify.
   - Logo em seguida execulte os endpoints da controller Artist, começando pelo GetArtitsBySpotifyAPI, que é o endpoint responsavel por fazer a requisição na API do Spotify e inserir os informações na base de dados.
   - Execulte os demais endpoints.
+
+## Créditos
+* <a href="https://developer.spotify.com/documentation/web-api/tutorials/getting-started">API do Spotify</a>
 
 ## Licença
 
