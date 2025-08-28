@@ -18,8 +18,8 @@
 
 <p align="center">
   <a href="#funcionalidades">Funcionalidades</a> •
-  <a href="#how-to-use">Como usar</a> •
-  <a href="#license">Licença</a>
+  <a href="#como-usar">Como usar</a> •
+  <a href="#licença">Licença</a>
 </p>
 
 ![screenshot](https://github.com/kcsdesenvolvedor/spotify-api/blob/main/SpotifyApi/SpotifyApi/Assets/demostracao.gif)
