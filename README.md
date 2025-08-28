@@ -56,7 +56,7 @@ $ git clone https://github.com/kcsdesenvolvedor/spotify-api.git
 * Criação das chaves para conexão com a API do Spotify
   - Para realizarmos requisições para API do Spotify precisamos de duas chaves, ClientID e ClientSecret.
   - Crie uma conta no Portal do Spotify: <a href="https://developer.spotify.com/">Criar conta</a>.
-  - Faça a criação de um aplicativo, pois o aplicativo fornece a ID do cliente e o segredo do cliente necessários para solicitar um token de acesso.
+  - Faça a criação de um aplicativo, pois o aplicativo fornece a ID do cliente e o segredo do cliente necessários para solicitar um token de acesso. <a href="https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app">Criar aplicativo</a>
   - Acesse o dashboard do seu aplicativo e obtenha a ClientID e ClientSecret.
  
 * Execulte a API
